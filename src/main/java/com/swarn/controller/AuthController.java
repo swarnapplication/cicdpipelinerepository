@@ -17,7 +17,7 @@ import com.swarn.service.EmployeeInfoServiceIntrfc;
 import com.swarn.util.JwtUtil;
 
 @RestController
-@RequestMapping("/authorization")
+//@RequestMapping("/authorization")
 public class AuthController {
 	
 	@Autowired
@@ -25,6 +25,12 @@ public class AuthController {
 	
 	@Autowired
 	private EmployeeInfoServiceIntrfc empService;
+	
+	@GetMapping("/")
+	public String healthCheck()
+	{
+		return "Service is UP";
+	}
 	
 	@GetMapping("/createtoken")
 	public String createToken()

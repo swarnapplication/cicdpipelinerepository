@@ -46,7 +46,7 @@ public class AuthController {
 		
 		jwtUtil.validateAccessToken(authHeader);
 		
-		return "Hello: "+generatedToken;
+		return "Hello Swarnendu: "+generatedToken;
 	}
 	
 	
@@ -57,6 +57,12 @@ public class AuthController {
 		
 		return new ResponseEntity<>(empService.fetchAllEmployees(), null, HttpStatus.OK);
 		
+	}
+	
+	@GetMapping(value="/test")
+	public String testMethod()
+	{
+		return "Hello : Anupam";
 	}
 
 }
